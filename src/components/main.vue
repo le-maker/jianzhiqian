@@ -2,20 +2,20 @@
 
   <div id="app" >
     <div id="head">
-      <div class="tu1"><h1>定位</h1></div>
+      <div class="tu1" @click="tu()"><h1><i class="el-icon-location-outline">定位</i></h1></div>
       <div class="sousuo">
         <router-link to="/sousuo" style="text-decoration: none">
           <div
-            style="margin-left:10px;margin-top:5px;height: 80%;width: 90%;border: #8c939d 1px solid;border-radius: 10%">
-            <div style="margin-top: 8px;font-size: 16px;color: gray">大家都在搜：高薪
-              <div style="float:right;color: gray">搜索</div>
+            style="margin-left:10px;margin-top:5px;height: 80%;width: 90%;border: #8c939d 1px solid;">
+            <div style="margin-left:-20px;margin-top: 8px;font-size: 16px;color: gray">大家都在搜：高薪
+              <div style="float:right;margin-right:10px;color: gray">搜索</div>
             </div>
 
           </div>
         </router-link>
       </div>
       <div class="tu2" style="margin-top: 10px;line-height: 50px">
-        <img src="#" height="5px"/>
+        <div style="color: #d33939;font-size: 15px">签到</div>
       </div>
     </div>
 
@@ -33,25 +33,22 @@
       <!--中间分类部分-->
       <div id="fenlei">
         <div class="lei">
-          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px "><img :src="type.pic" width="100%"
-                                                                                       height="100%"></div>
+          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px ">
+            <i class="el-icon-date" style="color: #cf9236;font-size: 35px"></i>
+          </div>
           <p style="margin-top: 0px;font-size: 14px"> 长期兼职</p>
         </div>
         <div class="lei">
-          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px "><img :src="type.pic" width="100%"
-                                                                                       height="100%"></div>
+          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px "><i class="el-icon-location-outline" style="color: #cf9236;font-size: 35px"></i></div>
           <p style="margin-top: 0px;font-size: 14px"> 附近兼职</p></div>
         <div class="lei">
-          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px "><img :src="type.pic" width="100%"
-                                                                                       height="100%"></div>
+          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px "><i class="el-icon-notebook-2" style="color: #cf9236;font-size: 35px"></i></div>
           <p style="margin-top: 0px;font-size: 14px"> 日常任务</p></div>
         <div class="lei">
-          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px "><img :src="type.pic" width="100%"
-                                                                                       height="100%"></div>
+          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px "><i class="el-icon-s-opportunity" style="color: #cf9236;font-size: 35px"></i></div>
           <p style="margin-top: 0px;font-size: 14px"> 技能兼职</p></div>
         <div class="lei">
-          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px "><img :src="type.pic" width="100%"
-                                                                                       height="100%"></div>
+          <div style="margin-left:20px;margin-top: 10px;height: 40px;width:40px "><i class="el-icon-s-grid" style="color: #cf9236;font-size: 35px"></i>></div>
           <p style="margin-top: 0px;font-size: 14px"> 更多</p></div>
       </div>
       <br/>
@@ -141,9 +138,10 @@
           {yao: '体育类专业大二大三在校生', price: '8000', cname: '南窑飞鱼科技公司', jie: '月结', addr: '南窑头98排'},
         ],
         lunbo1: [
-          {photo: 'http://q1b2m7x30.bkt.clouddn.com/FlWUPyfKBezdapVZzJdAb8GMWTPi'},
-          {photo: 'http://q1b2m7x30.bkt.clouddn.com/FvkpnABhRLawMBS8utO6hwLsqK3G'},
-          {photo: 'http://q1b2m7x30.bkt.clouddn.com/FlWUPyfKBezdapVZzJdAb8GMWTPi'}
+          {photo: 'http://img3.imgtn.bdimg.com/it/u=3064701827,539321344&fm=11&gp=0.jpg'},
+          {photo: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1028733324,1416337193&fm=26&gp=0.jpg'},
+          {photo:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=451445492,2344344322&fm=26&gp=0.jpg'},
+          {photo:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1014412350,1979863063&fm=11&gp=0.jpg'}
         ],
         type: {pic: 'http://q1b2m7x30.bkt.clouddn.com/FlWUPyfKBezdapVZzJdAb8GMWTPi'},
         /*isUpperLaoding: false,*/
@@ -156,6 +154,9 @@
     methods:{
       qing:function () {
         this.$router.push("/xiangqing")
+      },
+      tu:function () {
+        this.$router.push("/ditu")
       }
     },
 

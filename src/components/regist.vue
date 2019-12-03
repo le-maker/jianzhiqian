@@ -22,7 +22,7 @@
   export default {
     name: "regist",
     data(){
-      /*user:{}*/
+     return{}
     },
     methods:{
       btn:function () {

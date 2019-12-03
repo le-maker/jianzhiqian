@@ -45,10 +45,10 @@
         this.$router.push("/wode")
       },
       self: function () {
-        this.$router.push("/selxin")
+        this.$router.push("/info")
       },
       jian:function () {
-        this.$router.push("/jian")
+        this.$router.push("/resume")
       }
     }
 
@@ -77,8 +77,8 @@
 
   #fan {
     float: left;
-    /*border: 1px solid red;*/
-    height: 80%;
+   /* border: 1px solid red;*/
+    height: 50%;
     width: 10%;
   }
 

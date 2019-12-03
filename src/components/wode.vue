@@ -29,24 +29,32 @@
     <hr style="border: 1px solid gainsboro;"/>
     <p style="margin-left: 10px;font-size: 14px">我的兼职</p>
     <div id="middle">
-      <div class="jian1">
-        <div class="img"><img :src="user.pic" width="100%" height="100%"/></div>
-        <div style="font-size: 15px">已报名</div>
+      <div class="jian1" @click="tai()">
+        <div> <i class="el-icon-user" style="color: #d33939;width: 30px; font-size:20px;height: 30px;font-weight: bolder;line-height: 30px;align-content: center" ></i><br></div>
+        <div style="font-size: 15px">
+          已报名</div>
       </div>
-      <div class="jian1">
-        <div class="img"><img :src="user.pic" width="100%" height="100%"/></div>
+      <div class="jian1" @click="tai()">
+        <div><i class="el-icon-edit-outline" style="color: #d33939;font-size:20px;width: 30px; height: 30px;font-weight: bolder;line-height: 30px;align-content: center" ></i><br></div>
         <div style="font-size: 15px">已录用</div>
+
       </div>
-      <div class="jian1">
-        <div class="img"><img :src="user.pic" width="100%" height="100%"/></div>
+      <div class="jian1" @click="tai()">
+        <div><i class="el-icon-circle-check" style="color: #d33939;font-size:20px;width: 30px; height: 30px;font-weight: bolder;line-height: 30px;align-content: center" ></i><br></div>
         <div style="font-size: 15px">已到岗</div>
+
       </div>
-      <div class="jian1">
-        <div class="img"><img :src="user.pic" width="100%" height="100%"/></div>
+      <div class="jian1" @click="tai()">
+        <div><i class="el-icon-document" style="color: #d33939;font-size:20px;width: 30px; height: 30px;font-weight: bolder;line-height: 30px;align-content: center" ></i><br></div>
         <div style="font-size: 15px">已结算</div>
+
       </div>
     </div>
+
+    <h4>&nbsp;&nbsp;个人信息完善程度&nbsp;&nbsp;</h4>
+    <el-progress :percentage="user.wan"></el-progress>
     <hr style="border: 1px solid gainsboro;"/>
+    <ScrollLoader class="container-main" :style="{maxHeight: maxHeight + 'px'}">
     <div id="buttom">
       <div class="n2">
         <p style="font-size: 16px;margin-left:20px;font-weight: bolder">领积分换好礼</p></div>
@@ -63,17 +71,25 @@
       <div class="n2">
         <p style="font-size: 16px;margin-left:20px;font-weight: bolder">更多</p></div>
     </div>
+    </ScrollLoader>
     <Foot></Foot>
   </div>
 </template>
 
 <script>
   import foot from '@/components/foot.vue'
-
+  import ScrollLoader from '@/components/scrollLoader.vue';
   export default {
     name: "wode",
     components: {
-      'Foot': foot
+      'Foot': foot,
+      ScrollLoader
+    },
+    props: {
+      maxHeight: {
+        type: Number,
+        default: 700
+      },
     },
     data() {
       return {
@@ -83,10 +99,21 @@
           phone: '13892968992',
           money: '18.00',
           jianli: '30%',
-          jifen: '100'
+          jifen: '100',
+          wan:60
         }
       }
-    }
+    },
+    methods:{
+      tai:function () {
+        this.$router.push("/apply")
+      }
+    },
+    mounted() {
+      //document.getElementsByTagName('body')[0].scrollTop=0;
+      this.minHeight = document.getElementById('window-view-container').offsetHeight;
+      this.maxHeight = document.getElementById('window-view-container').offsetHeight;
+    },
   }
 </script>
 
@@ -105,7 +132,18 @@
     float: left;
     overflow: hidden;
   }
+  h4 {
+    display: flex;
+    flex-direction: row;
+  }
 
+  h4:before,
+  h4:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 2px dashed gray;
+    margin: auto;
+  }
   #headnext {
     /*border: 1px red solid;*/
     width: 100%;

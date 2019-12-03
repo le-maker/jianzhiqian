@@ -18,7 +18,7 @@
       <div class="e1">
         <el-select v-model="value" placeholder="区域" >
           <el-option
-            v-for="item in options"
+            v-for="item in options2"
             :key="item.value"
             :label="item.label"
             :value="item.value">
@@ -28,7 +28,7 @@
       <div class="e1">
         <el-select v-model="value" placeholder="排序" >
           <el-option
-            v-for="item in options"
+            v-for="item in options3"
             :key="item.value"
             :label="item.label"
             :value="item.value">
@@ -38,7 +38,7 @@
       <div class="e1">
         <el-select v-model="value" placeholder="筛选" >
           <el-option
-            v-for="item in options"
+            v-for="item in options4"
             :key="item.value"
             :label="item.label"
             :value="item.value">
@@ -139,12 +139,33 @@
         }, {
           value: '选项3',
           label: '服务员'
+        }],
+        options2: [{
+          value: '选项1',
+          label: '西安市'
         }, {
-          value: '选项4',
-          label: '销售'
+          value: '选项2',
+          label: '渭南市'
         }, {
-          value: '选项5',
-          label: '程序员'
+          value: '选项3',
+          label: '咸阳市'
+        }],
+        options3: [{
+          value: '选项1',
+          label: '综合排序'
+        }, {
+          value: '选项2',
+          label: '最新发布'
+        }, {
+          value: '选项3',
+          label: '离我最近'
+        }],
+        options4: [{
+          value: '选项1',
+          label: '限男生'
+        }, {
+          value: '选项2',
+          label: '限女生'
         }],
       }
     },
